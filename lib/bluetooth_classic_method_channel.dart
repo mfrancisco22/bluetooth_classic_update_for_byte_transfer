@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:typed_data';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -130,6 +131,13 @@ class MethodChannelBluetoothClassic extends BluetoothClassicPlatform {
   Future<bool> write(String message) async {
     var res = await methodChannel
         .invokeMethod<bool>("write", <String, String>{"message": message});
+    return res!;
+  }
+
+  @override
+  Future<bool> writeByteList(Uint8List message) async {
+    var res = await methodChannel
+        .invokeMethod<bool>("writeByteList", <String, Uint8List>{"message": message});
     return res!;
   }
 }
