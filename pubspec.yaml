@@ -1,4 +1,4 @@
-name: bluetooth_classic_raw_byte
+name: bluetooth_classic_update_for_byte_transfer
 description: A Flutter plugin to connect to Bluetooth Classic devices, mainly designed to work with serial communication.
 version: 0.0.2
 homepage:
